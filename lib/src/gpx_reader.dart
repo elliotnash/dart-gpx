@@ -240,6 +240,9 @@ class GpxReader {
       wpt.lon = double.parse(elm.attributes
           .firstWhere((attr) => attr.name == GpxTagV11.longitude)
           .value);
+      wpt.ele = double.parse(elm.attributes
+          .firstWhere((attr) => attr.name == GpxTagV11.elevation)
+          .value);
     }
 
     if ((elm is XmlStartElementEvent) && !elm.isSelfClosing) {
